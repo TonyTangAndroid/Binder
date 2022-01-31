@@ -1,6 +1,6 @@
 package com.android.binding;
 
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModel;
 
 import com.binding.Binder;
 import com.binding.annotations.SubscriptionsFactory;

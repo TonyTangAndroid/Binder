@@ -1,7 +1,7 @@
 package com.android.binding;
 
 import android.app.Application;
-import android.support.v4.app.FragmentManager;
+import androidx.fragment.app.FragmentManager;
 
 /**
  * a class that integrates the Binding process to your android application

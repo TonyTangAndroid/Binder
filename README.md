@@ -4,23 +4,24 @@
 An Annotation processor that allows binding two classes with each other, where the first class can listen to the updates of the second class, like in <b>MVVM</b>, when we need our <b>View</b> to subscribe on the <b>View-Model</b>, so when it's variables update, we want our views to be updated as well ... although this library is not limited to <b>MVVM</b>, and also it allows this behavior between any two Objects, but it will be explained on an <b>MVVM</b> example for <b>Android</b> 
 
 # Declaring the View-Model (Subscriptions source)
+
 ```java
-public class ViewModel extends android.arch.lifecycle.ViewModel {
+public class ViewModel extends androidx.lifecycle.ViewModel {
 
-	@SubscriptionName("stringLiveData")
-	final MutableLiveData<String> stringLiveData = new MutableLiveData<>();
+  @SubscriptionName("stringLiveData")
+  final MutableLiveData<String> stringLiveData = new MutableLiveData<>();
 
-	private final Subject<Integer> intSubject = BehaviorSubject.createDefault(0);
+  private final Subject<Integer> intSubject = BehaviorSubject.createDefault(0);
 
-	@SubscriptionName("intSubject")
-	Subject<Integer> getIntSubject(){
-	    return intSubject;
-	}
+  @SubscriptionName("intSubject")
+  Subject<Integer> getIntSubject() {
+    return intSubject;
+  }
 
-	@Override
-	public void onCleared(){
-	    intSubject.complete();
-	}
+  @Override
+  public void onCleared() {
+    intSubject.complete();
+  }
 
 }
 ```
@@ -213,15 +214,15 @@ public class MainFragment extends Fragment {
 And declare the annotations in your ViewModel as follows :
 
 ```java
-public class MainViewModel extends android.arch.lifecycle.ViewModel {
+public class MainViewModel extends androidx.lifecycle.ViewModel {
 
-	@SubscriptionName("stringSubject")
-	final Subject<String> stringSubject = PublishSubject.create();
-	
-	@Override
-	public void onCleared(){
-		stringSubject.onComplete();
-	}	
+  @SubscriptionName("stringSubject")
+  final Subject<String> stringSubject = PublishSubject.create();
+
+  @Override
+  public void onCleared() {
+    stringSubject.onComplete();
+  }
 }
 ```
 	

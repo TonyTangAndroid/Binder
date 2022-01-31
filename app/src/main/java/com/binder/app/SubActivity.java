@@ -1,7 +1,7 @@
 package com.binder.app;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.binding.Binder;
 import com.binding.annotations.SubscribeTo;
