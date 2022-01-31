@@ -45,10 +45,11 @@ dependencies {
 
 
     implementation 'com.github.TonyTangAndroid:LiteCycle:1.4.0'
-    implementation project(':android')
-    annotationProcessor project(':processor')
 
-//    implementation 'com.github.TonyTangAndroid.Binder:binding:0.0.10'
-//    implementation 'com.github.TonyTangAndroid.Binder:android:0.1.0'
-//    annotationProcessor 'com.github.TonyTangAndroid.Binder:processor:0.1.0'
+
+//    implementation project(':android')
+//    annotationProcessor project(':processor')
+    implementation 'com.github.TonyTangAndroid.Binder:binding:1.2.0'
+    implementation 'com.github.TonyTangAndroid.Binder:android:1.2.0'
+    annotationProcessor 'com.github.TonyTangAndroid.Binder:processor:1.2.0'
 }
